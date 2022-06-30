@@ -31,12 +31,12 @@ CREATE TABLE reservations (
   start_date DATE,
   end_date DATE,
   property_id INTEGER REFERENCES properties(id),
-  guset_id INTEGER REFERENCES users(id)
+  guest_id INTEGER REFERENCES users(id)
 );
 
 CREATE TABLE property_reviews (
   id SERIAL PRIMARY KEY NOT NULL,
-  guset_id INTEGER REFERENCES users(id),
+  guest_id INTEGER REFERENCES users(id),
   property_id INTEGER REFERENCES properties(id),
   reservation_id INTEGER REFERENCES reservations(id),
   rating SMALLINT,
